@@ -12,6 +12,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class HomeController {
+
+    /**
+     * 메인페이지 호출
+     * @param model
+     * @return 메인 페이지
+     */
     @RequestMapping(value = { "/", "/welcome" }, method = RequestMethod.GET)
     public String welcomePage(Model model) {
         model.addAttribute("title", "Welcome");
@@ -19,6 +25,12 @@ public class HomeController {
         return "testhtml/welcomePage";
     }
 
+    /**
+     * admin 페이지 호출
+     * @param model
+     * @param principal
+     * @return admin 페이지
+     */
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
     public String adminPage(Model model, Principal principal) {
 
@@ -30,18 +42,34 @@ public class HomeController {
         return "testhtml/adminPage";
     }
 
+    /**
+     * 로그인 페이지 호출
+     * @param model
+     * @return 로그인 페이지
+     */
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginPage(Model model) {
 
         return "testhtml/loginPage";
     }
 
+    /**
+     * 로그아웃 성공 페이지 호출
+     * @param model
+     * @return 로그아웃 성공 페이지
+     */
     @RequestMapping(value = "/logoutSuccessful", method = RequestMethod.GET)
     public String logoutSuccessfulPage(Model model) {
         model.addAttribute("title", "Logout");
         return "testhtml/logoutSuccessfulPage";
     }
 
+    /**
+     * 사용자 페이지 호출
+     * @param model
+     * @param principal
+     * @return 사용자 페이지
+     */
     @RequestMapping(value = "/userInfo", method = RequestMethod.GET)
     public String userInfo(Model model, Principal principal) {
 
@@ -58,6 +86,12 @@ public class HomeController {
         return "testhtml/userInfoPage";
     }
 
+    /**
+     * 403 에러 페이지 호출
+     * @param model
+     * @param principal
+     * @return 403 에러 페이지
+     */
     @RequestMapping(value = "/403", method = RequestMethod.GET)
     public String accessDenied(Model model, Principal principal) {
 

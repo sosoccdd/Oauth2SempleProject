@@ -1,15 +1,21 @@
 package cn.crscube.portal.utils;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 
 public class EncrytedPasswordUtils {
     // Encryte Password with BCryptPasswordEncoder
+
+    /**
+     * BCrypt 패스워드 암호화
+     * @param password
+     * @return encode password값
+     */
     public static String encrytePassword(String password) {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         return encoder.encode(password);
     }
-//    @Bean
+
 //    public static String passwordEncoder(String userId , String password) {
 //        ShaPasswordEncoder shaPasswordEncoder = new ShaPasswordEncoder(256);
 //        return shaPasswordEncoder.encodePassword(password, userId.toUpperCase());

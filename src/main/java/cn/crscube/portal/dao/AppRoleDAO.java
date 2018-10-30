@@ -16,6 +16,11 @@ public class AppRoleDAO {
     @Autowired
     private EntityManager entityManager;
 
+    /**
+     * Role Name 조회
+     * @param userId
+     * @return user Role List
+     */
     public List<String> getRoleNames(Long userId) {
         String sql = "Select ur.appRole.roleName from " + UserRole.class.getName() + " ur " //
                 + " where ur.appUser.userId = :userId ";

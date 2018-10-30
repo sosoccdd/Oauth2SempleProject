@@ -6,6 +6,11 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 
 public class WebUtils {
+    /**
+     *
+     * @param user
+     * @return
+     */
     public static String toString(User user) {
         StringBuilder sb = new StringBuilder();
 

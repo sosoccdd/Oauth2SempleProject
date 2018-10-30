@@ -15,6 +15,11 @@ public class AppUserDAO {
     @Autowired
     private EntityManager entityManager;
 
+    /**
+     * userName 으로 user 정보 가져오기
+     * @param userName
+     * @return user 정보 객체
+     */
     public AppUser findUserAccount(String userName) {
         try {
             String sql = "Select e from " + AppUser.class.getName() + " e " //

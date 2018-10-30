@@ -16,6 +16,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService, UserDetailsServiceTest {
 
@@ -25,6 +26,12 @@ public class UserDetailsServiceImpl implements UserDetailsService, UserDetailsSe
     @Autowired
     private AppRoleDAO appRoleDAO;
 
+    /**
+     * user 정보를 조회
+     * @param userName
+     * @return UserDetails 객체
+     * @throws UsernameNotFoundException
+     */
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
         AppUser appUser = this.appUserDAO.findUserAccount(userName);
