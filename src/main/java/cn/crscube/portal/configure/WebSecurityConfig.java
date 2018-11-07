@@ -1,4 +1,5 @@
 package cn.crscube.portal.configure;
+/*
 
 import javax.sql.DataSource;
 
@@ -113,3 +114,4 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 }
+*/
